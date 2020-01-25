@@ -37,6 +37,12 @@ steps:
   WorkingDirectory: Tailsping.SpaceGame.Web/wwwroot
 
 - DotNetCoreCLI@2
+displayName: 'Restore project dependencies'
+inputs:
+  command: 'restore'
+  projects: '**/*.csproj'
+
+- DotNetCoreCLI@2
   displayName: 'Build the project - Release'
   inputs:
     command: 'build'
